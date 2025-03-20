@@ -32,7 +32,7 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
           >
             <span className="text-2xl font-bold text-white">
-              Nex<span className="text-[#66BFFF]">Bot</span>
+              Vibe<span className="text-[#66BFFF]">Sense</span>
             </span>
           </motion.div>
         </Link>

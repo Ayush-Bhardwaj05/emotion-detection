@@ -1,65 +1,57 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 // Sample team data
 const team = [
   {
     id: 1,
-    name: "Dr. Alex Morgan",
-    role: "Chief Robotics Engineer",
-    image: "/placeholder.svg?height=500&width=500",
-    bio: "With over 15 years of experience in robotics and AI, Dr. Morgan leads our technical development team.",
+    name: "Ayush Bhardwaj",
+    image: "/team/ayush.png",
+    bio: "Upcoming Intern at Mimecast.",
     social: {
-      twitter: "#",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/ayush-bhardwaj-ayush0505/",
       github: "#",
-      email: "alex@nexbot.com",
+      email: "ayush.is22@bmsce.ac.inbmsce.ac.in",
     },
   },
   {
     id: 2,
-    name: "Sarah Chen",
-    role: "AI Research Director",
-    image: "/placeholder.svg?height=500&width=500",
-    bio: "Sarah specializes in neural networks and machine learning algorithms that power our robots' decision-making capabilities.",
+    name: "Harsh Daftari",
+    image: "/team/ayush.jpg",
+    bio: "Current Research Intern at HPE.",
     social: {
-      twitter: "#",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/harsh-daftari-571568253/",
       github: "#",
-      email: "sarah@nexbot.com",
+      email: "harshdaftari.is22@bmsce.ac.in",
     },
   },
   {
     id: 3,
-    name: "James Wilson",
-    role: "Hardware Design Lead",
-    image: "/placeholder.svg?height=500&width=500",
-    bio: "James brings expertise in mechanical engineering and industrial design to create our robots' physical forms.",
+    name: "Nikhil Singh",
+    image: "/team/nikhil.jpg",
+    bio: "Currently working as a Product Associate Developer at BMC Software (Intern).",
     social: {
-      twitter: "#",
-      linkedin: "#",
-      github: "#",
-      email: "james@nexbot.com",
+      linkedin: "https://www.linkedin.com/in/nikhil-singh-a77b4325a/",
+      github: "https://leetcode.com/u/Nikhil_Singh_zer0/",
+      email: "nikhilsingh.is22@bmsce.ac.in",
     },
   },
   {
     id: 4,
-    name: "Maya Patel",
-    role: "UX/UI Designer",
-    image: "/placeholder.svg?height=500&width=500",
-    bio: "Maya ensures our robots' interfaces are intuitive and accessible for all users, regardless of technical background.",
+    name: "Yash Singh",
+    image: "/team/ayush.jpg",
+    bio: "Runner up in TechThon Hackathon, powered by Visionet Systems Inc.",
     social: {
-      twitter: "#",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/yash-singh-988aa525a/",
       github: "#",
-      email: "maya@nexbot.com",
+      email: "yashsingh.is22@bmsce.ac.in",
     },
   },
-]
+];
 
 export default function AboutPage() {
   const container = {
@@ -70,12 +62,12 @@ export default function AboutPage() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 50 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0A1F44] to-[#050A1A] py-24">
@@ -86,15 +78,26 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
           className="mb-20 text-center"
         >
-          <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">About Us</h1>
+          <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">
+            About Us
+          </h1>
           <p className="mx-auto max-w-3xl text-xl text-[#D1D1D1]">
-            We are a team of passionate engineers, designers, and AI specialists dedicated to creating the next
-            generation of advanced robotics solutions.
+            We are a group of friends studying in ISE at BMSCE, driven by a
+            passion for innovation. We specialize in building production-level
+            web applications that solve real-life problems with cutting-edge
+            technology.
           </p>
         </motion.div>
 
-        <motion.div variants={container} initial="hidden" animate="show" className="mb-24">
-          <h2 className="mb-12 text-center text-4xl font-bold text-[#66BFFF]">Our Team</h2>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="mb-24"
+        >
+          <h2 className="mb-12 text-center text-4xl font-bold text-[#66BFFF]">
+            Our Team
+          </h2>
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (
               <motion.div
@@ -115,7 +118,6 @@ export default function AboutPage() {
 
                     <div className="absolute bottom-0 left-0 w-full p-6 text-white">
                       <h3 className="mb-1 text-2xl font-bold">{member.name}</h3>
-                      <p className="mb-4 text-[#66BFFF]">{member.role}</p>
                       <p className="mb-6 text-[#D1D1D1]">{member.bio}</p>
                       <div className="flex space-x-3">
                         <Button
@@ -124,17 +126,10 @@ export default function AboutPage() {
                           asChild
                           className="h-10 w-10 rounded-full bg-[#0A1F44]/50 text-[#66BFFF] backdrop-blur-sm hover:bg-[#0A1F44]/80 hover:text-[#66BFFF]"
                         >
-                          <a href={member.social.twitter} aria-label="Twitter">
-                            <Twitter className="h-5 w-5" />
-                          </a>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          asChild
-                          className="h-10 w-10 rounded-full bg-[#0A1F44]/50 text-[#66BFFF] backdrop-blur-sm hover:bg-[#0A1F44]/80 hover:text-[#66BFFF]"
-                        >
-                          <a href={member.social.linkedin} aria-label="LinkedIn">
+                          <a
+                            href={member.social.linkedin}
+                            aria-label="LinkedIn"
+                          >
                             <Linkedin className="h-5 w-5" />
                           </a>
                         </Button>
@@ -154,7 +149,10 @@ export default function AboutPage() {
                           asChild
                           className="h-10 w-10 rounded-full bg-[#0A1F44]/50 text-[#66BFFF] backdrop-blur-sm hover:bg-[#0A1F44]/80 hover:text-[#66BFFF]"
                         >
-                          <a href={`mailto:${member.social.email}`} aria-label="Email">
+                          <a
+                            href={`mailto:${member.social.email}`}
+                            aria-label="Email"
+                          >
                             <Mail className="h-5 w-5" />
                           </a>
                         </Button>
@@ -171,32 +169,7 @@ export default function AboutPage() {
             ))}
           </div>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mx-auto max-w-4xl rounded-xl border border-[#66BFFF]/20 bg-[#0F2A5C]/30 p-10 shadow-[0_0_30px_rgba(102,191,255,0.1)] backdrop-blur-md"
-        >
-          <h2 className="mb-8 text-center text-4xl font-bold text-white">Our Mission</h2>
-          <p className="mb-6 text-xl text-[#D1D1D1]">
-            At NexBot, we believe in creating robotics technology that enhances human potential rather than replacing
-            it. Our robots are designed to work alongside humans, augmenting their capabilities and improving quality of
-            life across various domains including healthcare, education, industry, and home assistance.
-          </p>
-          <p className="mb-10 text-xl text-[#D1D1D1]">
-            We are committed to ethical AI development and ensuring our technology is accessible, safe, and beneficial
-            for all. Our research is conducted with transparency and a focus on addressing real-world challenges.
-          </p>
-          <div className="text-center">
-            <Button className="relative overflow-hidden bg-transparent text-[#66BFFF] before:absolute before:inset-0 before:-z-10 before:translate-y-full before:bg-[#66BFFF] before:transition-transform hover:text-[#0A1F44] hover:before:translate-y-0">
-              Join Our Team
-            </Button>
-          </div>
-        </motion.div>
       </div>
     </div>
-  )
+  );
 }
-

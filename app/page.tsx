@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import RoadmapSection from "@/components/roadmap-section"
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import RoadmapSection from "@/components/roadmap-section";
 
 export default function Home() {
-  const containerRef = useRef(null)
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
-  })
+  });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
 
   return (
     <div ref={containerRef} className="relative flex flex-col">
@@ -33,7 +33,7 @@ export default function Home() {
             frameBorder="0"
             width="100%"
             height="100%"
-            title="NexBot 3D Model"
+            title="VibeSense"
             className="h-full w-full"
           ></iframe>
         </motion.div>
@@ -46,22 +46,26 @@ export default function Home() {
           className="absolute bottom-16 left-0 z-20 w-full px-6 text-center md:bottom-24 md:px-12"
         >
           <h1 className="mb-4 text-4xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
-           Meet Echo
-            <span className="ml-2 text-[#66BFFF]">Robotics</span>
+            Meet Vibe
+            <span className="ml-2 text-[#66BFFF]">Sense</span>
           </h1>
           <div className="flex flex-wrap justify-center gap-4">
-            {/* <Button asChild size="lg" className="bg-[#66BFFF] text-[#0A1F44] hover:bg-[#66BFFF]/80">
-              <Link href="/models">
-                Explore Models <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button> */}
             <Button
               asChild
               variant="outline"
               size="lg"
               className="border-[#66BFFF] text-[#66BFFF] hover:bg-[#66BFFF]/10"
             >
-              <Link href="/explore">Explore Voice AI</Link>
+              <motion.button
+                whileHover={{
+                  scale: 1.1,
+                  boxShadow: "0px 0px 15px rgba(59, 130, 246, 0.4)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] shadow-xl transition-all duration-300"
+              >
+                <Link href="/explore">Try Voice AI</Link>
+              </motion.button>
             </Button>
           </div>
         </motion.div>
@@ -73,6 +77,5 @@ export default function Home() {
       {/* Roadmap Section */}
       <RoadmapSection />
     </div>
-  )
+  );
 }
-

@@ -123,7 +123,7 @@ export default function AuthPage() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <Card className="overflow-hidden border-[#66BFFF]/20 bg-[#0F2A5C]/30 shadow-[0_0_30px_rgba(102,191,255,0.2)] backdrop-blur-xl">
             <div className="bg-gradient-to-r from-[#0A1F44] to-[#0F2A5C] p-6 text-white">
-              <h2 className="text-3xl font-bold">Welcome to NexBot</h2>
+              <h2 className="text-3xl font-bold">Welcome to VibeSense</h2>
               <p className="mt-2 text-[#D1D1D1]">Sign in to your account or create a new one</p>
             </div>
             <CardContent className="p-6">

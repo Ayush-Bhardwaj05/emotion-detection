@@ -7,9 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 // const geist = Geist_Sans({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Echo - Advanced Robotics",
-  description: "Immersive web application featuring advanced robotics models",
-    generator: 'v0.dev'
+  title: "VibeSense",
+  description: "Immersive web application for emotion detection and sentiment analysis.",
 }
 
 export default function RootLayout({
